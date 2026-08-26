@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I.S. Enterprises | Premium EV Scooty Showroom</title>
+<meta name="description" content="I.S. Enterprises EV Scooty Showroom - Baramasia More, Birni. Best Mileage • Best Price.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+--green:#164b3b;--green-dark:#0d352a;--green-light:#e8f1ec;
+--gold:#b88a3b;--gold-light:#d6b66b;--cream:#f8f5ee;
+--white:#fff;--text:#19332b;--muted:#718078;--border:#e4e1d8;
+--shadow:0 10px 35px rgba(22,75,59,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"DM Sans",sans-serif;background:var(--cream);color:var(--text);line-height:1.6}
+
+.offer-bar{width:100%;height:44px;background:var(--green);color:white;overflow:hidden;white-space:nowrap;display:flex;align-items:center;position:relative;z-index:1000}
+.offer-track{display:flex;width:max-content;animation:slideOffer 25s linear infinite}
+.offer-item{padding:0 45px;font-size:13px;font-weight:700;letter-spacing:.4px}
+.offer-item span{color:var(--gold-light)}
+@keyframes slideOffer{0%{transform:translateX(100vw)}100%{transform:translateX(-100%)}}
+
+header{background:radial-gradient(circle at 50% 0%,rgba(184,138,59,.13),transparent 45%),linear-gradient(180deg,#fff,#f5f1e8);text-align:center;padding:65px 20px 55px;border-bottom:1px solid var(--border)}
+.shop-label{color:var(--gold);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:4px;margin-bottom:14px}
+header h1{font-family:"Playfair Display",serif;font-size:clamp(42px,8vw,72px);font-weight:800;color:var(--green-dark);letter-spacing:-1px}
+.header-line{width:75px;height:3px;background:var(--gold);margin:20px auto}
+.location-top{color:var(--muted);font-size:15px;font-weight:600}
+.tagline{margin-top:12px;color:var(--green);font-size:16px;font-weight:800;letter-spacing:.7px}
+
+nav{position:sticky;top:0;z-index:900;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;justify-content:center;align-items:center;gap:35px;padding:15px}
+nav a{color:var(--green-dark);text-decoration:none;font-size:13px;font-weight:800;transition:.2s}
+nav a:hover{color:var(--gold)}
+
+.dialogue-section{max-width:1000px;margin:auto;padding:65px 20px 45px;text-align:center}
+.dialogue-label{color:var(--gold);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:3px}
+.dialogue-section h2{font-family:"Playfair Display",serif;font-size:clamp(30px,5vw,46px);color:var(--green-dark);margin:10px 0 14px}
+.dialogue{max-width:750px;margin:auto;color:#617068;font-size:17px;line-height:1.8}
+.dialogue strong{color:var(--green)}
+
+.search-box{width:min(650px,92%);margin:25px auto 45px;position:relative}
+.search-box input{width:100%;padding:16px 22px 16px 48px;border:1px solid var(--border);border-radius:50px;background:white;color:var(--text);font-family:inherit;font-size:15px;outline:none;box-shadow:0 5px 20px rgba(0,0,0,.04);transition:.25s}
+.search-box input:focus{border-color:var(--gold);box-shadow:0 0 0 4px rgba(184,138,59,.10)}
+.search-icon{position:absolute;left:20px;top:50%;transform:translateY(-50%);font-size:20px;color:var(--gold)}
+
+.container{width:min(1200px,92%);margin:auto;padding-bottom:80px}
+.section-title{text-align:center;margin-bottom:30px}
+.section-title h2{font-family:"Playfair Display",serif;font-size:38px;color:var(--green-dark)}
+.section-title p{margin-top:5px;color:var(--muted)}
+
+.stock-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+.card{background:white;border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);transition:transform .3s,box-shadow .3s,border-color .3s}
+.card:hover{transform:translateY(-7px);border-color:rgba(184,138,59,.55);box-shadow:0 18px 45px rgba(22,75,59,.15)}
+.photo{height:190px;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at center,#eef5f0,#e1ece5);border-bottom:1px solid var(--border);position:relative}
+.photo::after{content:"";position:absolute;width:115px;height:115px;border-radius:50%;border:1px solid rgba(184,138,59,.25)}
+.scooter-icon{font-size:72px;position:relative;z-index:2}
+.card-body{padding:22px}
+.badge{display:inline-flex;padding:6px 11px;border-radius:50px;background:var(--green-light);color:var(--green);border:1px solid #d5e4dc;font-size:11px;font-weight:800;letter-spacing:.5px}
+.card h3{font-family:"Playfair Display",serif;font-size:23px;color:var(--green-dark);margin-top:14px}
+.price{color:var(--gold);font-size:25px;font-weight:800;margin:6px 0 15px}
+.details{color:var(--muted);font-size:14px;line-height:2}
+.details strong{color:var(--text)}
+.enquiry-btn{display:block;width:100%;padding:13px;margin-top:18px;text-align:center;text-decoration:none;border-radius:10px;background:var(--green);color:white;font-size:14px;font-weight:800;transition:.25s}
+.enquiry-btn:hover{background:var(--green-dark);transform:translateY(-2px)}
+
+.offer-box{width:min(1050px,92%);margin:0 auto 75px;padding:35px 25px;text-align:center;background:white;border:1px solid var(--border);border-radius:20px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.offer-box::before{content:"";position:absolute;left:0;top:0;width:5px;height:100%;background:var(--gold)}
+.offer-box-label{color:var(--gold);text-transform:uppercase;font-size:11px;font-weight:800;letter-spacing:3px}
+.offer-box h2{font-family:"Playfair Display",serif;color:var(--green-dark);font-size:32px;margin:7px 0}
+.offer-box p{color:var(--muted)}
+
+.contact{background:var(--green-dark);color:white;text-align:center;padding:75px 20px}
+.contact-label{color:var(--gold-light);text-transform:uppercase;font-size:11px;font-weight:800;letter-spacing:3px}
+.contact h2{font-family:"Playfair Display",serif;font-size:40px;margin:8px 0 20px}
+.contact-info{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;max-width:900px;margin:25px auto 0}
+.info-box{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:17px 25px;min-width:230px}
+.info-box small{display:block;color:#aebfb7;font-size:11px;text-transform:uppercase;letter-spacing:1px;margin-bottom:5px}
+.info-box a{color:white;text-decoration:none;font-size:16px;font-weight:800}
+.contact-buttons{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:28px}
+.contact-btn{display:inline-block;padding:14px 28px;border-radius:50px;text-decoration:none;font-weight:800;font-size:14px;transition:.25s}
+.call-btn{background:white;color:var(--green-dark)}
+.whatsapp-btn{background:#25D366;color:white}
+.contact-btn:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.2)}
+
+footer{background:#09251d;color:#82968e;text-align:center;padding:25px 15px;font-size:12px}
+.footer-name{color:var(--gold-light);font-family:"Playfair Display",serif;font-size:19px;margin-bottom:4px}
+
+@media(max-width:600px){
+.offer-bar{height:40px}.offer-item{font-size:11px;padding:0 30px}
+header{padding:50px 15px 45px}header h1{font-size:43px}
+nav{gap:20px}nav a{font-size:11px}
+.dialogue-section{padding-top:50px}.dialogue{font-size:15px}
+.stock-grid{grid-template-columns:1fr}.contact h2{font-size:33px}.info-box{width:100%}
+}
+</style>
+</head>
+
+<body>
+
+<div class="offer-bar">
+<div class="offer-track">
+<div class="offer-item">🎉 <span>FESTIVAL OFFER:</span> ₹1,000 OFF ON SELECTED EV SCOOTERS</div>
+<div class="offer-item">🛵 BEST MILEAGE • BEST PRICE</div>
+<div class="offer-item">🎁 LIMITED TIME OFFER — CONTACT US TODAY</div>
+<div class="offer-item">✨ PREMIUM EV SCOOTERS • BEST VALUE</div>
+<div class="offer-item">🎉 <span>FESTIVAL OFFER:</span> ₹1,000 OFF ON SELECTED EV SCOOTERS</div>
+<div class="offer-item">🛵 BEST MILEAGE • BEST PRICE</div>
+</div>
+</div>
+
+<header>
+<div class="shop-label">Electric Mobility Showroom</div>
+<h1>I.S. ENTERPRISES</h1>
+<div class="header-line"></div>
+<div class="location-top">EV SCOOTY SHOWROOM • BARAMASIA MORE, BIRNI</div>
+<div class="tagline">BEST MILEAGE • BEST PRICE</div>
+</header>
+
+<nav>
+<a href="#scooters">SCOOTERS</a>
+<a href="#offers">OFFERS</a>
+<a href="#contact">CONTACT</a>
+</nav>
+
+<section class="dialogue-section">
+<div class="dialogue-label">Ride Into The Future</div>
+<h2>Your Journey. Your EV. Your Choice.</h2>
+<p class="dialogue">
+Discover electric scooters built for everyday life —
+with <strong>excellent mileage, attractive pricing and reliable service.</strong>
+Choose your favourite model from our collection and contact I.S. Enterprises for availability, booking and complete product information.
+</p>
+
+<div class="search-box">
+<span class="search-icon">⌕</span>
+<input id="search" type="text" placeholder="Search scooter model..." onkeyup="filterStock()">
+</div>
+</section>
+
+<section class="offer-box" id="offers">
+<div class="offer-box-label">Festival Special</div>
+<h2>₹1,000 OFF</h2>
+<p>Special festival offer on selected EV scooters. Contact us to check eligible models and current availability.</p>
+</section>
+
+<main class="container" id="scooters">
+<div class="section-title">
+<h2>Our EV Scooter Collection</h2>
+<p>Choose your model and send us an enquiry on WhatsApp.</p>
+</div>
+<div class="stock-grid" id="stockGrid"></div>
+</main>
+
+<section class="contact" id="contact">
+<div class="contact-label">Visit Our Showroom</div>
+<h2>I.S. Enterprises</h2>
+
+<div class="contact-info">
+<div class="info-box">
+<small>Location</small>
+<a href="#">📍 Baramasia More, Birni</a>
+</div>
+
+<div class="info-box">
+<small>Primary Contact</small>
+<a href="tel:6200933163">📞 6200933163</a>
+</div>
+
+<div class="info-box">
+<small>Alternative Contact</small>
+<a href="tel:9162289982">📞 9162289982</a>
+</div>
+</div>
+
+<div class="contact-buttons">
+<a class="contact-btn call-btn" href="tel:6200933163">📞 CONTACT NOW</a>
+<a class="contact-btn whatsapp-btn" href="https://wa.me/9162289982" target="_blank">💬 WHATSAPP</a>
+</div>
+</section>
+
+<footer>
+<div class="footer-name">I.S. ENTERPRISES</div>
+EV SCOOTY SHOWROOM<br>
+Baramasia More, Birni<br><br>
+© 2026 I.S. Enterprises • All Rights Reserved
+</footer>
+
+<script>
+const scooters = [
+{name:"IS-EV City 1",price:"₹69,999",battery:"Lead Acid",range:"80 km",stock:3},
+{name:"IS-EV City 2",price:"₹74,999",battery:"Lead Acid",range:"90 km",stock:2},
+{name:"IS-EV Plus",price:"₹79,999",battery:"Lithium",range:"100 km",stock:4},
+{name:"IS-EV Rider",price:"₹84,999",battery:"Lithium",range:"110 km",stock:2},
+{name:"IS-EV Rider Pro",price:"₹89,999",battery:"Lithium",range:"120 km",stock:1},
+{name:"IS-EV Smart",price:"₹72,999",battery:"Lead Acid",range:"85 km",stock:5},
+{name:"IS-EV Smart Plus",price:"₹78,999",battery:"Lithium",range:"100 km",stock:2},
+{name:"IS-EV Family",price:"₹81,999",battery:"Lithium",range:"105 km",stock:3},
+{name:"IS-EV Family Pro",price:"₹91,999",battery:"Lithium",range:"125 km",stock:1},
+{name:"IS-EV Sport",price:"₹86,999",battery:"Lithium",range:"115 km",stock:2},
+{name:"IS-EV Sport Pro",price:"₹94,999",battery:"Lithium",range:"130 km",stock:1},
+{name:"IS-EV Eco",price:"₹67,999",battery:"Lead Acid",range:"75 km",stock:4},
+{name:"IS-EV Eco Plus",price:"₹73,999",battery:"Lead Acid",range:"90 km",stock:2},
+{name:"IS-EV Max",price:"₹99,999",battery:"Lithium",range:"140 km",stock:1},
+{name:"IS-EV Max Pro",price:"₹1,09,999",battery:"Lithium",range:"150 km",stock:2}
+];
+
+function renderStock(list=scooters){
+const grid=document.getElementById("stockGrid");
+grid.innerHTML="";
+
+if(list.length===0){
+grid.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:50px;background:white;border-radius:18px;border:1px solid #e4e1d8;color:#718078">No scooter found.</div>';
+return;
+}
+
+list.forEach(s=>{
+const available=s.stock>0;
+
+const message=`Hello I.S. Enterprises,
+
+I am interested in this EV scooter:
+
+Model: ${s.name}
+Price: ${s.price}
+Battery: ${s.battery}
+Range: ${s.range}
+Available Quantity: ${s.stock}
+
+Please provide more details and booking information.`;
+
+const whatsappURL="https://wa.me/9162289982?text="+encodeURIComponent(message);
+
+grid.innerHTML+=`
+<article class="card">
+<div class="photo"><div class="scooter-icon">🛵</div></div>
+<div class="card-body">
+<span class="badge">${available?"✓ IN STOCK":"SOLD OUT"}</span>
+<h3>${s.name}</h3>
+<div class="price">${s.price}</div>
+<div class="details">
+🔋 Battery: <strong>${s.battery}</strong><br>
+🛣️ Range: <strong>${s.range}</strong><br>
+📦 Quantity: <strong>${s.stock}</strong>
+</div>
+<a class="enquiry-btn" href="${whatsappURL}" target="_blank">💬 ENQUIRE ON WHATSAPP</a>
+</div>
+</article>`;
+});
+}
+
+function filterStock(){
+const query=document.getElementById("search").value.toLowerCase().trim();
+const filtered=scooters.filter(s=>s.name.toLowerCase().includes(query));
+renderStock(filtered);
+}
+
+renderStock();
+</script>
+
+</body>
+</html>
