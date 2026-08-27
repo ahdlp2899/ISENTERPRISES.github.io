@@ -27,87 +27,48 @@
 
  ========================================= MOBILE ========================================= */ @media(max-width:550px){ .offer-bar{ height:48px; } .offer-badge{ height:48px; padding:0 11px; font-size:11px; } .offer-item{ font-size:13px; margin-right:45px; } .shop-header{ padding:40px 15px; } .shop-name{ font-size:34px; } .dialogue{ font-size:17px; } .products-section{ padding:50px 15px; } .products-title{ font-size:28px; } .product-grid{ grid-template-columns:1fr; } .reviews-section{ padding:50px 15px; } .reviews-heading h2{ font-size:28px; } .review-grid{ grid-template-columns:1fr; } .contact-section{ padding:50px 15px; } .contact-title{ font-size:28px; } } </style> </head> <body> <!--
 /* =========================================
-   SIMPLE PREMIUM OFFER BANNER
+   NORMAL OFFER TEXT SLIDER
 ========================================= */
 
-.offer-banner{
+.offer-slider-bar{
     width:100%;
-    height:58px;
+    height:48px;
 
     background:#0B1F33;
 
+    color:#FFFFFF;
+
     display:flex;
     align-items:center;
 
     overflow:hidden;
 
-    border-bottom:2px solid #C9A227;
+    border-bottom:1px solid #C9A227;
 }
 
 
-/* OFFER LABEL */
+/* SLIDING TEXT */
 
-.offer-label{
-    flex-shrink:0;
-
-    height:100%;
-
-    padding:0 22px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:#C9A227;
-
-    color:#0B1F33;
-
-    font-size:12px;
-    font-weight:900;
-
-    letter-spacing:1.5px;
-}
-
-
-/* SLIDING AREA */
-
-.offer-slider{
-    flex:1;
-
-    overflow:hidden;
+.offer-slider-text{
+    display:inline-block;
 
     white-space:nowrap;
-}
-
-
-/* OFFER TEXT */
-
-.offer-message{
-    display:inline-block;
 
     padding-left:100%;
 
-    color:#FFFFFF;
-
     font-size:15px;
+
     font-weight:700;
 
-    letter-spacing:.4px;
+    letter-spacing:.5px;
 
-    animation:premiumOffer 14s linear infinite;
+    animation:offerSlide 12s linear infinite;
 }
 
 
-/* GOLD HIGHLIGHT */
+/* SLIDE RIGHT → LEFT */
 
-.offer-message::first-letter{
-    color:#C9A227;
-}
-
-
-/* ANIMATION */
-
-@keyframes premiumOffer{
+@keyframes offerSlide{
 
     0%{
         transform:translateX(0);
@@ -124,39 +85,26 @@
 
 @media(max-width:550px){
 
-    .offer-banner{
-        height:50px;
+    .offer-slider-bar{
+        height:44px;
     }
 
-    .offer-label{
-        padding:0 14px;
-        font-size:10px;
-        letter-spacing:1px;
-    }
-
-    .offer-message{
-        font-size:12px;
+    .offer-slider-text{
+        font-size:13px;
     }
 
 }
-  <!-- PREMIUM OFFER -->
 
-<div class="offer-banner">
+<!-- OFFER SLIDER -->
 
-    <div class="offer-label">
-        OFFER
-    </div>
+<div class="offer-slider-bar">
 
-    <div class="offer-slider">
-
-        <!-- CHANGE ONLY THE TEXT INSIDE THIS LINE -->
-        <div class="offer-message">
-            🎁 RAKSHABANDAN SPECIAL — ₹1000 OFF ON SELECTED SCOOTERS
-        </div>
-
+    <div class="offer-slider-text">
+        🎁 RAKSHABANDAN SPECIAL — ₹1000 OFF ON SELECTED SCOOTERS
     </div>
 
 </div>
+
 
 
 
