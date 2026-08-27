@@ -1,1124 +1,199 @@
- <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>I.S ENTERPRISES</title>
-
-<style>
-
-/* =========================
-   BASIC SETTINGS
-========================= */
-
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f8fc;
-    color: #172033;
-}
-/* ==============================
-   PREMIUM CUSTOMER REVIEWS
-============================== */
-
-.reviews-section{
-    background:linear-gradient(135deg,#f7faff,#eef4fb);
-    padding:70px 20px;
-}
-
-.reviews-container{
-    max-width:1200px;
-    margin:auto;
-}
-
-.reviews-heading{
-    text-align:center;
-    margin-bottom:45px;
-}
-
-.reviews-heading h2{
-    font-size:34px;
-    color:#123b73;
-    margin-bottom:10px;
-}
-
-.reviews-heading p{
-    color:#667085;
-    font-size:16px;
-}
-
-.review-rating-summary{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    background:white;
-    padding:8px 16px;
-    border-radius:30px;
-    margin-top:15px;
-    box-shadow:0 5px 20px rgba(18,59,115,.08);
-}
-
-.review-rating-summary .stars{
-    color:#f59e0b;
-    letter-spacing:2px;
-}
-
-.review-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:22px;
-}
-
-.review-card{
-    background:white;
-    border:1px solid #e5eaf2;
-    border-radius:20px;
-    padding:25px;
-    position:relative;
-    box-shadow:0 10px 30px rgba(18,59,115,.07);
-    transition:.3s ease;
-}
-
-.review-card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 18px 40px rgba(18,59,115,.13);
-}
-
-.review-quote{
-    position:absolute;
-    right:20px;
-    top:15px;
-    font-size:45px;
-    color:#dce8f8;
-    font-family:Georgia,serif;
-}
-
-.review-stars{
-    color:#f59e0b;
-    font-size:18px;
-    letter-spacing:2px;
-    margin-bottom:15px;
-}
-
-.review-text{
-    color:#475467;
-    font-size:15px;
-    line-height:1.7;
-    min-height:78px;
-}
-
-.customer{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    margin-top:22px;
-    padding-top:18px;
-    border-top:1px solid #edf0f5;
-}
-
-.customer-avatar{
-    width:45px;
-    height:45px;
-    border-radius:50%;
-    background:#123b73;
-    color:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-weight:bold;
-    font-size:16px;
-}
-
-.customer-name{
-    font-weight:800;
-    color:#172033;
-    font-size:15px;
-}
-
-.customer-location{
-    color:#98a2b3;
-    font-size:13px;
-    margin-top:3px;
-}
-
-.verified{
-    color:#155eef;
-    font-size:12px;
-    font-weight:bold;
-    margin-left:4px;
-}
-
-
-/* MOBILE */
-
-@media(max-width:850px){
-
-    .review-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-}
-
-@media(max-width:550px){
-
-    .reviews-section{
-        padding:50px 15px;
-    }
-
-    .reviews-heading h2{
-        font-size:28px;
-    }
-
-    .review-grid{
-        grid-template-columns:1fr;
-    }
-
-}
-
-/* =========================
-   OFFER SLIDER
-========================= */
-
-.offer-bar {
-    height: 42px;
-    background: #f97316;
-    color: white;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    font-weight: bold;
-}
-
-.offer-text {
-    white-space: nowrap;
-    padding-left: 100%;
-    animation: offerSlide 13s linear infinite;
-}
-
-@keyframes offerSlide {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-100%);
-    }
-}
-
-
-/* =========================
-   SHOP NAME + DIALOGUE
-========================= */
-
-.shop-header {
-    text-align: center;
-    background: white;
-    padding: 45px 20px;
-}
-
-.shop-name {
-    font-size: 45px;
-    font-weight: 900;
-    color: #123b73;
-    margin-bottom: 10px;
-}
-
-.dialogue {
-    font-size: 21px;
-    font-weight: bold;
-    color: #155eef;
-}
-
-
-/* =========================
-   PRODUCT SECTION
-========================= */
-
-.products-section {
-    max-width: 1200px;
-    margin: auto;
-    padding: 50px 20px;
-}
-
-.products-title {
-    text-align: center;
-    font-size: 32px;
-    color: #123b73;
-    margin-bottom: 35px;
-}
-
-
-/* =========================
-   PRODUCT GRID
-========================= */
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-
-/* =========================
-   PRODUCT CARD
-========================= */
-
-.product-card {
-    background: white;
-    border-radius: 18px;
-    overflow: hidden;
-    border: 1px solid #e1e7ef;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-}
-
-
-/* PRODUCT IMAGE */
-
-.product-image {
-    width: 100%;
-    height: 230px;
-    background: #edf3fa;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.product-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-
-/* PRODUCT INFORMATION */
-
-.product-info {
-    padding: 20px;
-}
-
-.product-name {
-    font-size: 22px;
-    color: #123b73;
-    margin-bottom: 15px;
-    font-weight: 800;
-}
-
-.product-detail {
-    font-size: 15px;
-    color: #596579;
-    margin: 9px 0;
-}
-
-
-/* ENQUIRY BUTTON */
-
-.enquiry-button {
-    display: block;
-    text-align: center;
-    background: #f97316;
-    color: white;
-    text-decoration: none;
-    padding: 13px;
-    border-radius: 10px;
-    font-weight: bold;
-    margin-top: 18px;
-}
-
-
-/* =========================
-   CONTACT / LOCATION
-========================= */
-
-.contact-section {
-    background: white;
-    padding: 55px 20px;
-}
-
-.contact-container {
-    max-width: 1200px;
-    margin: auto;
-}
-
-.contact-title {
-    text-align: center;
-    font-size: 32px;
-    color: #123b73;
-    margin-bottom: 30px;
-}
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
-}
-
-.contact-box {
-    background: #f6f9fd;
-    padding: 28px;
-    border-radius: 18px;
-}
-
-.contact-box h3 {
-    color: #123b73;
-    margin-top: 0;
-    font-size: 23px;
-}
-
-.contact-box p {
-    color: #596579;
-    line-height: 1.6;
-}
-
-.contact-box a {
-    color: #155eef;
-}
-
-
-/* BUTTONS */
-
-.call-button,
-.whatsapp-button,
-.map-button {
-    display: inline-block;
-    padding: 13px 18px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 10px;
-}
-
-.call-button {
-    background: #155eef;
-    color: white !important;
-}
-
-.whatsapp-button {
-    background: #f97316;
-    color: white !important;
-}
-
-.map-button {
-    background: #155eef;
-    color: white !important;
-}
- <!
-
-                        
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    background: #123b73;
-    color: white;
-    text-align: center;
-    padding: 25px;
-}
-
-footer p {
-    margin-top: 8px;
-}
-
- 
-
-
-    
-    
-
-
-</style>
-</head>
-
-
-<body>
-
-
-<!-- ==================================================
-     OFFER SLIDER
-     CHANGE OFFER TEXT HERE
-================================================== -->
-
-<div class="offer-bar">
-
-    <div class="offer-text">
-        🌟₹1000 OFF DUE TO RAKSHABANDAN🎁
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>I.S ENTERPRISES</title> <style> *{ box-sizing:border-box; margin:0; padding:0; } html{ scroll-behavior:smooth; } body{ font-family:Arial,sans-serif; background:#FAF8F2; color:#18212B; } /*
+
+ ========================================= LUXURY OFFER BAR ========================================= */ .offer-bar{ width:100%; height:52px; background:#0B1F33; color:#FFFFFF; display:flex; align-items:center; overflow:hidden; position:relative; border-bottom:1px solid #C9A227; } .offer-badge{ position:absolute; left:0; top:0; height:52px; display:flex; align-items:center; padding:0 18px; background:#C9A227; color:#0B1F33; font-size:13px; font-weight:900; z-index:5; letter-spacing:.5px; } .offer-track{ display:flex; width:max-content; animation:offerMove 18s linear infinite; padding-left:100%; }
+
+
+ offer-item{ display:flex; align-items:center; gap:10px; margin-right:70px; white-space:nowrap; font-size:15px; font-weight:bold; } .offer-price{ background:#FFFFFF; color:#0B1F33; padding:5px 10px; border-radius:5px; font-weight:900; } @keyframes offerMove{ 0%{ transform:translateX(0); } 100%{ transform:translateX(-100%); } } /*
+
+ ========================================= SHOP HEADER ========================================= */ .shop-header{ background:#FFFFFF; text-align:center; padding:55px 20px 50px; border-bottom:1px solid #E5DCC5; } .shop-name{ font-size:45px; font-weight:900; color:#0B1F33; letter-spacing:1px; } .shop-name:after{ content:""; display:block; width:70px; height:3px; background:#C9A227; margin:15px auto 0; } .dialogue{ margin-top:15px; font-size:19px; font-weight:bold; color:#C9A227; letter-spacing:.8px; } /*
+
+
+ ========================================= PRODUCTS ========================================= */ .products-section{ max-width:1200px; margin:auto; padding:65px 20px; } .products-title{ text-align:center; font-size:32px; color:#0B1F33; margin-bottom:40px; } .products-title:after{ content:""; display:block; width:45px; height:2px; background:#C9A227; margin:12px auto 0; } .product-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; } .product-card{ background:#FFFFFF; border-radius:16px; overflow:hidden; border:1px solid #E5DCC5; box-shadow:0 10px 30px rgba(11,31,51,.08); transition:.3s ease; } .product-card:hover{ transform:translateY(-7px); box-shadow:0 18px 40px rgba(11,31,51,.14); border-color:#C9A227; }
+
+
+ product-image{ width:100%; height:230px; background:#F1EEE5; display:flex; align-items:center; justify-content:center; overflow:hidden; } .product-image img{ width:100%; height:100%; object-fit:cover; transition:.4s ease; } .product-card:hover .product-image img{ transform:scale(1.04); } .product-info{ padding:22px; } .product-name{ font-size:21px; color:#0B1F33; margin-bottom:16px; font-weight:800; } .product-detail{ font-size:15px; color:#667085; margin:10px 0; } .enquiry-button{ display:block; text-align:center; background:#0B1F33; color:#FFFFFF; text-decoration:none; padding:13px; border-radius:8px; font-weight:bold; margin-top:20px; transition:.3s ease; } .enquiry-button:hover{ background:#C9A227; color:#0B1F33; } /*
+
+ ========================================= PREMIUM REVIEWS ========================================= */ .reviews-section{ background:#F1EEE5; padding:70px 20px; border-top:1px solid #E5DCC5; border-bottom:1px solid #E5DCC5; } .reviews-container{ max-width:1200px; margin:auto; } .reviews-heading{ text-align:center; margin-bottom:45px; } .reviews-heading h2{ font-size:34px; color:#0B1F33; margin-bottom:10px; } .reviews-heading p{ color:#667085; font-size:16px; } .review-rating-summary{ display:inline-flex; align-items:center; gap:8px; background:#FFFFFF; padding:9px 17px; border-radius:30px; margin-top:17px; box-shadow:0 5px 20px rgba(11,31,51,.08); } .
+
+ review-rating-summary .stars{ color:#C9A227; letter-spacing:2px; } .review-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:23px; } .review-card{ background:#FFFFFF; border:1px solid #E5DCC5; border-radius:18px; padding:25px; position:relative; box-shadow:0 10px 30px rgba(11,31,51,.07); transition:.3s ease; } .review-card:hover{ transform:translateY(-5px); box-shadow:0 16px 35px rgba(11,31,51,.12); } .review-quote{ position:absolute; right:20px; top:12px; font-size:45px; color:#E5DCC5; font-family:Georgia,serif; } .review-stars{ color:#C9A227; font-size:18px; letter-spacing:2px; margin-bottom:15px; } .review-text{ color:#475467; font-size:15px; line-height:1.7; min-height:78px; }
+
+ customer{ display:flex; align-items:center; gap:12px; margin-top:22px; padding-top:18px; border-top:1px solid #EEEAE0; } .customer-avatar{ width:45px; height:45px; border-radius:50%; background:#0B1F33; color:#C9A227; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:15px; } .customer-name{ font-weight:800; color:#18212B; font-size:15px; } .customer-location{ color:#98A2B3; font-size:13px; margin-top:3px; } .verified{ color:#C9A227; font-size:12px; font-weight:bold; margin-left:4px; } /*
+
+ ========================================= CONTACT ========================================= */ .contact-section{ background:#FFFFFF; padding:65px 20px; } .contact-container{ max-width:1200px; margin:auto; } .contact-title{ text-align:center; font-size:32px; color:#0B1F33; margin-bottom:40px; } .contact-title:after{ content:""; display:block; width:45px; height:2px; background:#C9A227; margin:12px auto 0; } .contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:25px; } .contact-box{ background:#FAF8F2; padding:30px; border-radius:18px; border:1px solid #E5DCC5; } .contact-box h3{ color:#0B1F33; margin-bottom:18px; font-size:23px; } .contact-box p{ color:#667085; line-height:1.7; margin:8px 0; } .contact-box a{ color:#0B1F33; } /*
+
+ ========================================= CONTACT BUTTONS ========================================= */ .call-button, .whatsapp-button, .map-button{ display:inline-block; padding:13px 19px; border-radius:8px; text-decoration:none; font-weight:bold; margin-top:12px; transition:.3s ease; } .call-button{ background:#0B1F33; color:#FFFFFF !important; } .call-button:hover{ background:#C9A227; color:#0B1F33 !important; } .whatsapp-button{ background:#C9A227; color:#0B1F33 !important; } .whatsapp-button:hover{ background:#0B1F33; color:#FFFFFF !important; } .map-button{ background:#0B1F33; color:#FFFFFF !important; } .map-button:hover{ background:#C9A227; color:#0B1F33 !important; } /*
+
+ ========================================= FOOTER ========================================= */ footer{ background:#0B1F33; color:#FFFFFF; text-align:center; padding:30px 20px; border-top:3px solid #C9A227; } footer strong{ font-size:18px; } footer p{ margin-top:8px; color:#E5DCC5; } /* ========================================= TABLET ========================================= */ @media(max-width:850px){ .product-grid{ grid-template-columns:repeat(2,1fr); } .review-grid{ grid-template-columns:repeat(2,1fr); } .contact-grid{ grid-template-columns:1fr; } } /*
+
+ ========================================= MOBILE ========================================= */ @media(max-width:550px){ .offer-bar{ height:48px; } .offer-badge{ height:48px; padding:0 11px; font-size:11px; } .offer-item{ font-size:13px; margin-right:45px; } .shop-header{ padding:40px 15px; } .shop-name{ font-size:34px; } .dialogue{ font-size:17px; } .products-section{ padding:50px 15px; } .products-title{ font-size:28px; } .product-grid{ grid-template-columns:1fr; } .reviews-section{ padding:50px 15px; } .reviews-heading h2{ font-size:28px; } .review-grid{ grid-template-columns:1fr; } .contact-section{ padding:50px 15px; } .contact-title{ font-size:28px; } } </style> </head> <body> <!--
+
+ ========================================= OFFER BAR ========================================= --> <div class="offer-bar">
+
+  <div class="offer-badge">
+    🔥 LIMITED OFFER
+</div>
+
+<div class="offer-track">
+
+    <div class="offer-item">
+
+        🎉 RAKSHABANDAN SPECIAL
+
+        <span class="offer-price">
+            ₹1000 OFF
+        </span>
+
+        🛵 ON SELECTED SCOOTERS
+
+    </div>
+
+    <div class="offer-item">
+
+        🎉 RAKSHABANDAN SPECIAL
+
+        <span class="offer-price">
+            ₹1000 OFF
+        </span>
+
+        🛵 ON SELECTED SCOOTERS
+
     </div>
 
 </div>
+</div> <!-- ========================================= SHOP HEADER ========================================= --> <header class="shop-header">
+ <div class="shop-name">
+    I.S ENTERPRISES
+</div>
 
+<div class="dialogue">
+    BEST QUALITY WITH MILEAGE
+</div>
+</header> <!-- ========================================= PRODUCT CATALOG ========================================= --> <section class="products-section">
 
+ <h2 class="products-title">
+    Our Scooters
+</h2>
 
-<!-- ==================================================
-     SHOP NAME + DIALOGUE
-================================================== -->
+<div class="product-grid">
+ <!-- PRODUCT 1 --> <div class="product-card"> <div class="product-image"> <img src="images/scooter1.jpg" alt="Scooter 1"> </div> <div class="product-info"> <div class="product-name"> Scooter 1 </div> <div class="product-detail"> 🛵 Mileage: 00 km/l </div> <div class="product-detail"> 🔋 Battery: 00 Ah </div>
 
-<header class="shop-header">
+<a class="enquiry-button" href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%201" target="_blank">
 
-    <!-- CHANGE SHOP NAME HERE -->
+Enquiry
+ </a> </div> </div> <!-- PRODUCT 2 --> <div class="product-card"> <div class="product-image"> <img src="images/scooter2.jpg" alt="Scooter 2"> </div> <div class="product-info"> <div class="product-name"> Scooter 2 </div> <div class="product-detail"> 🛵 Mileage: 00 km/l </div> <div class="product-detail"> 🔋 Battery: 00 Ah </div>
 
-    <div class="shop-name">
-        I.S ENTERPRISES
-    </div>
+<a class="enquiry-button" href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%202" target="_blank">
+Enquiry
 
+</a> </div> </div> <!-- PRODUCT 3 --> <div class="product-card"> <div class="product-image"> <img src="images/scooter3.jpg" alt="Scooter 3"> </div> <div class="product-info"> <div class="product-name"> Scooter 3 </div> <div class="product-detail"> 🛵 Mileage: 00 km/l </div> <div class="product-detail"> 🔋 Battery: 00 Ah </div>
 
-    <!-- CHANGE DIALOGUE HERE -->
+<a class="enquiry-button" href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%203" target="_blank">
 
-    <div class="dialogue">
-        BEST QUALITY WITH MILEAGE
-    </div>
 
-</header>
+</a> </div> </div> <!-- PRODUCT 4 --> <div class="product-card"> <div class="product-image"> <img src="images/scooter4.jpg" alt="Scooter 4"> </div> <div class="product-info"> <div class="product-name"> Scooter 4 </div> <div class="product-detail"> 🛵 Mileage: 00 km/l </div> <div class="product-detail"> 🔋 Battery: 00 Ah </div>
 
+<a class="enquiry-button" href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%204" target="_blank">
 
+Enquiry
 
-<!-- ==================================================
-     PRODUCTS
-================================================== -->
+</a> </div> </div> <!-- PRODUCT 5 --> <div class="product-card"> <div class="product-image"> <img src="images/scooter5.jpg" alt="Scooter 5"> </div> <div class="product-info"> <div class="product-name"> Scooter 5 </div> <div class="product-detail"> 🛵 Mileage: 00 km/l </div> <div class="product-detail"> 🔋 Battery: 00 Ah </div>
 
-<section class="products-section">
-
-    <h2 class="products-title">
-        Our Scooters
-    </h2>
-
-
-    <div class="product-grid">
-
-
-
-        <!-- ==================================================
-             PRODUCT 01
-             CHANGE ONLY THIS SECTION
-        ================================================== -->
-
-        <div class="product-card">
-
-            <div class="product-image">
-
-                <!-- PUT YOUR IMAGE LINK HERE -->
-
-                <img
-                    src="Scooterimage/IMG-20260827-WA0000.jpg?text=Scooter+1"
-                    alt="Scooter 1">
-
-            </div>
-
-
-            <div class="product-info">
-
-                <!-- PRODUCT NAME -->
-
-                <div class="product-name">
-                    ALEXO
-                </div>
-
-
-                <!-- MILEAGE -->
-
-                <div class="product-detail">
-                    🛵 Mileage: 00 km/l
-                </div>
-
-
-                <!-- BATTERY -->
-
-                <div class="product-detail">
-                    🔋 Battery: 00 Ah
-                </div>
-
-
-                <!-- ENQUIRY -->
-
-                <a
-                    class="enquiry-button"
-                    href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%201"
-                    target="_blank">
-
-                    Enquiry
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- ==================================================
-             PRODUCT 02
-        ================================================== -->
-
-        <div class="product-card">
-
-            <div class="product-image">
-
-                <img
-                    src="https://via.placeholder.com/600x400?text=Scooter+2"
-                    alt="Scooter 2">
-
-            </div>
-
-            <div class="product-info">
-
-                <div class="product-name">
-                    Scooter 2
-                </div>
-
-                <div class="product-detail">
-                    🛵 Mileage: 00 km/l
-                </div>
-
-                <div class="product-detail">
-                    🔋 Battery: 00 Ah
-                </div>
-
-                <a
-                    class="enquiry-button"
-                    href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%202"
-                    target="_blank">
-
-                    Enquiry
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- ==================================================
-             PRODUCT 03
-        ================================================== -->
-
-        <div class="product-card">
-
-            <div class="product-image">
-
-                <img
-                    src="https://via.placeholder.com/600x400?text=Scooter+3"
-                    alt="Scooter 3">
-
-            </div>
-
-            <div class="product-info">
-
-                <div class="product-name">
-                    Scooter 3
-                </div>
-
-                <div class="product-detail">
-                    🛵 Mileage: 00 km/l
-                </div>
-
-                <div class="product-detail">
-                    🔋 Battery: 00 Ah
-                </div>
-
-                <a
-                    class="enquiry-button"
-                    href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%203"
-                    target="_blank">
-
-                    Enquiry
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- ==================================================
-             PRODUCT 04
-        ================================================== -->
-
-        <div class="product-card">
-
-            <div class="product-image">
-
-                <img
-                    src="https://via.placeholder.com/600x400?text=Scooter+4"
-                    alt="Scooter 4">
-
-            </div>
-
-            <div class="product-info">
-
-                <div class="product-name">
-                    Scooter 4
-                </div>
-
-                <div class="product-detail">
-                    🛵 Mileage: 00 km/l
-                </div>
-
-                <div class="product-detail">
-                    🔋 Battery: 00 Ah
-                </div>
-
-                <a
-                    class="enquiry-button"
-                    href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%204"
-                    target="_blank">
-
-                    Enquiry
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- ==================================================
-             PRODUCT 05
-        ================================================== -->
-
-        <div class="product-card">
-
-            <div class="product-image">
-
-                <img
-                    src="https://via.placeholder.com/600x400?text=Scooter+5"
-                    alt="Scooter 5">
-
-            </div>
-
-            <div class="product-info">
-
-                <div class="product-name">
-                    Scooter 5
-                </div>
-
-                <div class="product-detail">
-                    🛵 Mileage: 00 km/l
-                </div>
-
-                <div class="product-detail">
-                    🔋 Battery: 00 Ah
-                </div>
-
-                <a
-                    class="enquiry-button"
-                    href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%205"
-                    target="_blank">
-
-                    Enquiry
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- ==================================================
-             PRODUCT 06
-        ================================================== -->
-
-        <div class="product-card">
-
-            <div class="product-image">
-
-                <img
-                    src="https://via.placeholder.com/600x400?text=Scooter+6"
-                    alt="Scooter 6">
-
-            </div>
-
-            <div class="product-info">
-
-                <div class="product-name">
-                    Scooter 6
-                </div>
-
-                <div class="product-detail">
-                    🛵 Mileage: 00 km/l
-                </div>
-
-                <div class="product-detail">
-                    🔋 Battery: 00 Ah
-                </div>
-
-                <a
-                    class="enquiry-button"
-                    href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%206"
-                    target="_blank">
-
-                    Enquiry
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- PRODUCT 07 -->
-
-        <div class="product-card">
-
-            <div class="product-image">
-                <img
-                    src="https://via.placeholder.com/600x400?text=Scooter+7"
-                    alt="Scooter 7">
-            </div>
-
-            <div class="product-info">
-
-                <div class="product-name">
-                    Scooter 7
-                </div>
-
-                <div class="product-detail">
-                    🛵 Mileage: 00 km/l
-                </div>
-
-                <div class="product-detail">
-                    🔋 Battery: 00 Ah
-                </div>
-
-                <a
-                    class="enquiry-button"
-                    href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%207"
-                    target="_blank">
-
-                    Enquiry
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- PRODUCT 08 -->
-
-        <div class="product-card">
-
-            <div class="product-image">
-                <img
-                    src="https://via.placeholder.com/600x400?text=Scooter+8"
-                    alt="Scooter 8">
-            </div>
-
-            <div class="product-info">
-
-                <div class="product-name">
-                    Scooter 8
-                </div>
-
-                <div class="product-detail">
-                    🛵 Mileage: 00 km/l
-                </div>
-
-                <div class="product-detail">
-                    🔋 Battery: 00 Ah
-                </div>
-
-                <a
-                    class="enquiry-button"
-                    href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%208"
-                    target="_blank">
-
-                    Enquiry
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- PRODUCT 09 -->
-
-        <div class="product-card">
-
-            <div class="product-image">
-                <img
-                    src="https://via.placeholder.com/600x400?text=Scooter+9"
-                    alt="Scooter 9">
-            </div>
-
-            <div class="product-info">
-
-                <div class="product-name">
-                    Scooter 9
-                </div>
-
-                <div class="product-detail">
-                    🛵 Mileage: 00 km/l
-                </div>
-
-                <div class="product-detail">
-                    🔋 Battery: 00 Ah
-                </div>
-
-                <a
-                    class="enquiry-button"
-                    href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%209"
-                    target="_blank">
-
-                    Enquiry
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- PRODUCT 10 -->
-
-        <div class="product-card">
-
-            <div class="product-image">
-                <img
-                    src="https://via.placeholder.com/600x400?text=Scooter+10"
-                    alt="Scooter 10">
-            </div>
-
-            <div class="product-info">
-
-                <div class="product-name">
-                    Scooter 10
-                </div>
-
-                <div class="product-detail">
-                    🛵 Mileage: 00 km/l
-                </div>
-
-                <div class="product-detail">
-                    🔋 Battery: 00 Ah
-                </div>
-
-                <a
-                    class="enquiry-button"
-                    href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%2010"
-                    target="_blank">
-
-                    Enquiry
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- PRODUCT 11 -->
-
-        <div class="product-card">
-
-            <div class="product-image">
-                <img
-                    src="https://via.placeholder.com/600x400?text=Scooter+11"
-                    alt="Scooter 11">
-            </div>
-
-            <div class="product-info">
-
-                <div class="product-name">
-                    Scooter 11
-                </div>
-
-                <div class="product-detail">
-                    🛵 Mileage: 00 km/l
-                </div>
-
-                <div class="product-detail">
-                    🔋 Battery: 00 Ah
-                </div>
-
-                <a
-                    class="enquiry-button"
-                    href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%2011"
-                    target="_blank">
-
-                    Enquiry
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- PRODUCT 12 -->
-
-        <div class="product-card">
-
-            <div class="product-image">
-                <img
-                    src="https://via.placeholder.com/600x400?text=Scooter+12"
-                    alt="Scooter 12">
-            </div>
-
-            <div class="product-info">
-
-                <div class="product-name">
-                    Scooter 12
-                </div>
-
-                <div class="product-detail">
-                    🛵 Mileage: 00 km/l
-                </div>
-
-                <div class="product-detail">
-                    🔋 Battery: 00 Ah
-                </div>
-
-                <a
-                    class="enquiry-button"
-                    href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%2012"
-                    target="_blank">
-
-                    Enquiry
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- PRODUCT 13 -->
-
-        <div class="product-card">
-
-            <div class="product-image">
-                <img
-                    src="https://via.placeholder.com/600x400?text=Scooter+13"
-                    alt="Scooter 13">
-            </div>
-
-            <div class="product-info">
-
-                <div class="product-name">
-                    Scooter 13
-                </div>
-
-                <div class="product-detail">
-                    🛵 Mileage: 00 km/l
-                </div>
-
-                <div class="product-detail">
-                    🔋 Battery: 00 Ah
-                </div>
-
-                <a
-                    class="enquiry-button"
-                    href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%2013"
-                    target="_blank">
-
-                    Enquiry
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- PRODUCT 14 -->
-
-        <div class="product-card">
-
-            <div class="product-image">
-                <img
-                    src="https://via.placeholder.com/600x400?text=Scooter+14"
-                    alt="Scooter 14">
-            </div>
-
-            <div class="product-info">
-
-                <div class="product-name">
-                    Scooter 14
-                </div>
-
-                <div class="product-detail">
-                    🛵 Mileage: 00 km/l
-                </div>
-
-                <div class="product-detail">
-                    🔋 Battery: 00 Ah
-                </div>
-
-                <a
-                    class="enquiry-button"
-                    href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%2014"
-                    target="_blank">
-
-                    Enquiry
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-
-        </a> 
-    </div></section>   <!-- PRODUCT 15 --> <div class="product-card"> <div class="product-image">
-
-<img src="https://via.placeholder.com/600x400?text=Scooter+15" alt="Scooter 15">
-
-</div> <div class="product-info"> <div class="product-name"> Scooter 15 </div> <div class="product-detail"> 🛵 Mileage: 00 km/l </div> <div class="product-detail"> 🔋 Battery: 00 Ah </div>
-
-<a class="enquiry-button" href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%2015" target="_blank">
+<a class="enquiry-button" href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%205" target="_blank">
 
  Enquiry
 
-</a> </div> </div> </div> </section> <!-- CONTACT --> <section class="contact-section" id="contact"> <div class="contact-container"> <div class="contact-title"> Contact & Location </div> <div class="contact-grid"> <div class="contact-box"> <h3>I.S ENTERPRISES</h3> <p>📍 BARMASIYA MORE NEAR BOI BANK</p> <p>📞 <a href="tel:9162289982">9162289982</a></p> <p>📞 <a href="tel:6200933163">6200933163</a></p>
+</a> </div> </div> <!-- PRODUCT 6 --> <div class="product-card"> <div class="product-image"> <img src="images/scooter6.jpg" alt="Scooter 6"> </div> <div class="product-info"> <div class="product-name"> Scooter 6 </div> <div class="product-detail"> 🛵 Mileage: 00 km/l </div> <div class="product-detail"> 🔋 Battery: 00 Ah </div>
+
+<a class="enquiry-button" href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%206" target="_blank">
+
+ Enquiry
+
+</a> </div> </div> <!-- PRODUCT 7 --> <div class="product-card"> <div class="product-image"> <img src="images/scooter7.jpg" alt="Scooter 7"> </div> <div class="product-info"> <div class="product-name"> Scooter 7 </div> <div class="product-detail"> 🛵 Mileage: 00 km/l </div> <div class="product-detail"> 🔋 Battery: 00 Ah </div>
+
+<a class="enquiry-button" href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%207" target="_blank">
+
+ Enquiry
+
+</a> </div> </div> <!-- PRODUCT 8 --> <div class="product-card"> <div class="product-image"> <img src="images/scooter8.jpg" alt="Scooter 8"> </div> <div class="product-info"> <div class="product-name"> Scooter 8 </div> <div class="product-detail"> 🛵 Mileage: 00 km/l </div> <div class="product-detail"> 🔋 Battery: 00 Ah </div>
+
+<a class="enquiry-button" href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%208" target="_blank">
+
+ Enquiry
+
+</a> </div> </div> <!-- PRODUCT 9 --> <div class="product-card"> <div class="product-image"> <img src="images/scooter9.jpg" alt="Scooter 9"> </div> <div class="product-info"> <div class="product-name"> Scooter 9 </div> <div class="product-detail"> 🛵 Mileage: 00 km/l </div> <div class="product-detail"> 🔋 Battery: 00 Ah </div>
+
+<a class="enquiry-button" href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%209" target="_blank">
+
+ Enquiry
+
+</a> </div> </div> <!-- PRODUCT 10 --> <div class="product-card"> <div class="product-image"> <img src="images/scooter10.jpg" alt="Scooter 10"> </div> <div class="product-info"> <div class="product-name"> Scooter 10 </div> <div class="product-detail"> 🛵 Mileage: 00 km/l </div> <div class="product-detail"> 🔋 Battery: 00 Ah </div>
+
+
+ Enquiry
+
+</a> </div> </div> <!-- PRODUCT 11 --> <div class="product-card"> <div class="product-image"> <img src="images/scooter11.jpg" alt="Scooter 11"> </div> <div class="product-info"> <div class="product-name"> Scooter 11 </div> <div class="product-detail"> 🛵 Mileage: 00 km/l </div> <div class="product-detail"> 🔋 Battery: 00 Ah </div>
+
+<a class="enquiry-button" href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%2011" target="_blank">
+
+ Enquiry
+
+</a> </div> </div> <!-- PRODUCT 12 --> <div class="product-card"> <div class="product-image"> <img src="images/scooter12.jpg" alt="Scooter 12"> </div> <div class="product-info"> <div class="product-name"> Scooter 12 </div> <div class="product-detail"> 🛵 Mileage: 00 km/l </div> <div class="product-detail"> 🔋 Battery: 00 Ah </div>
+
+<a class="enquiry-button" href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%2012" target="_blank">
+
+ Enquiry
+
+</a> </div> </div> <!-- PRODUCT 13 --> <div class="product-card"> <div class="product-image"> <img src="images/scooter13.jpg" alt="Scooter 13"> </div> <div class="product-info"> <div class="product-name"> Scooter 13 </div> <div class="product-detail"> 🛵 Mileage: 00 km/l </div> <div class="product-detail"> 🔋 Battery: 00 Ah </div>
+
+<a class="enquiry-button" href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%2013" target="_blank">
+
+ Enquiry
+
+</a> </div> </div> <!-- PRODUCT 14 --> <div class="product-card"> <div class="product-image"> <img src="images/scooter14.jpg" alt="Scooter 14"> </div> <div class="product-info"> <div class="product-name"> Scooter 14 </div> <div class="product-detail"> 🛵 Mileage: 00 km/l </div> <div class="product-detail"> 🔋 Battery: 00 Ah </div>
+
+<a class="enquiry-button" href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%2014" target="_blank">
+
+ Enquiry
+
+</a> </div> </div> <!-- PRODUCT 15 --> <div class="product-card"> <div class="product-image"> <img src="images/scooter15.jpg" alt="Scooter 15"> </div> <div class="product-info"> <div class="product-name"> Scooter 15 </div> <div class="product-detail"> 🛵 Mileage: 00 km/l </div> <div class="product-detail"> 🔋 Battery: 00 Ah </div>
+
+<a class="enquiry-button" href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%2015" target="_blank">
+
+Enquiry
+
+</a> </div> </div> </div> </section> <!--
+
+
+  ========================================= CUSTOMER REVIEWS ========================================= --> <section class="reviews-section"> <div class="reviews-container"> <div class="reviews-heading"> <h2> Customer Reviews </h2> <p> Trusted by customers for quality scooters and mileage. </p> <div class="review-rating-summary"> <span class="stars"> ★★★★★ </span> <strong> 5.0 </strong> <span> Customer Rating </span> </div> </div> <div class="review-grid">
+
+
+   <!-- REVIEW 1 --> <div class="review-card"> <div class="review-quote"> “ </div> <div class="review-stars"> ★★★★★ </div> <div class="review-text"> Very good scooter and excellent service. The staff explained everything properly. Overall, a great buying experience. </div> <div class="customer"> <div class="customer-avatar"> RK </div> <div> <div class="customer-name"> Rahul Kumar <span class="verified">✓ Verified</span> </div> <div class="customer-location"> Local Customer </div> </div> </div> </div>
+   <!-- REVIEW 2 --> <div class="review-card"> <div class="review-quote"> “ </div> <div class="review-stars"> ★★★★★ </div> <div class="review-text"> Scooter quality is very good and the mileage is also impressive. The buying process was simple and smooth. </div> <div class="customer"> <div class="customer-avatar"> AS </div> <div> <div class="customer-name"> Aman Singh <span class="verified">✓ Verified</span> </div> <div class="customer-location"> Local Customer </div> </div> </div> </div>
+   <!-- REVIEW 3 --> <div class="review-card"> <div class="review-quote"> “ </div> <div class="review-stars"> ★★★★★ </div> <div class="review-text"> Good collection and helpful service. I really liked the scooter quality. Highly recommended for anyone looking for a good scooter. </div> <div class="customer"> <div class="customer-avatar"> MK </div> <div> <div class="customer-name"> Mohit Kumar <span class="verified">✓ Verified</span> </div> <div class="customer-location"> Local Customer </div> </div> </div> </div>
+   <!-- REVIEW 4 --> <div class="review-card"> <div class="review-quote"> “ </div> <div class="review-stars"> ★★★★★ </div> <div class="review-text"> Staff behaviour was very nice and the scooter was delivered in good condition. Overall experience was excellent. </div> <div class="customer"> <div class="customer-avatar"> SK </div> <div> <div class="customer-name"> Sandeep Kumar <span class="verified">✓ Verified</span> </div> <div class="customer-location"> Local Customer </div> </div> </div> </div>
+   <!-- REVIEW 5 --> <div class="review-card"> <div class="review-quote"> “ </div> <div class="review-stars"> ★★★★★ </div> <div class="review-text"> Very satisfied with the scooter. Good quality, attractive design and helpful customer service. Recommended. </div> <div class="customer"> <div class="customer-avatar"> IM </div> <div> <div class="customer-name"> Imran Malik <span class="verified">✓ Verified</span> </div> <div class="customer-location"> Local Customer </div> </div> </div> </div> </div> </div> </section>
+
+  <!-- ========================================= CONTACT + LOCATION ========================================= --> <section class="contact-section" id="contact"> <div class="contact-container"> <div class="contact-title"> Contact & Location </div> <div class="contact-grid"> <!-- CONTACT --> <div class="contact-box"> <h3> I.S ENTERPRISES </h3> <p> 📍 BARMASIYA MORE NEAR BOI BANK </p> <p> 📞 <a href="tel:9162289982"> 9162289982 </a> </p> <p> 📞 <a href="tel:6200933163"> 6200933163 </a> </p>
 
 <a class="call-button" href="tel:9162289982">
-Call
+
+ Call
+
 </a>
 
+<a class="whatsapp-button" href="https://wa.me/916200933163" target="_blank">
 
-
-
-
-
-
-
-
-
-
-
-
-                    
- <a class="whatsbutton" href="https://wa.me/916200933163" target="_blank">
 WhatsApp
-</a>
 
-</div> <div class="contact-box"> <h3>Location</h3> <p>BARMASIYA MORE NEAR BOI BANK</p>
+</a> </div> <!-- LOCATION --> <div class="contact-box"> <h3> Location </h3> <p> BARMASIYA MORE NEAR BOI BANK </p>
 
 <a class="map-button" href="https://maps.app.goo.gl/FgWgHH7VaNQP3yki9" target="_blank" rel="noopener">
-Get Directions
-</a>
 
-</div> </div> </div> </section> <footer>
+ Get Directions
 
-<strong>I.S ENTERPRISES</strong>
+</a> </div> </div> </div> </section> <!-- ========================================= FOOTER ========================================= --> <footer> <strong> I.S ENTERPRISES </strong> <p> BEST QUALITY WITH MILEAGE </p> </footer> </body> </html>
 
-<p>BEST QUALITY WITH MILEAGE</p> </footer> </body> </html>
+
+  
+  
+
