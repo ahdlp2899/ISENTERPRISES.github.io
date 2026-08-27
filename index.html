@@ -254,7 +254,28 @@ WhatsApp
 
  Get Directions
 
-</a> </div> </div> </div> </section> <!-- ========================================= FOOTER ========================================= --> <footer> <strong> I.S ENTERPRISES </strong> <p> BEST QUALITY WITH MILEAGE </p> </footer> </body> </html>
+</a> </div> </div> </div> </section> <!-- ========================================= FOOTER ========================================= --> <footer> <strong> I.S ENTERPRISES </strong> <p> BEST QUALITY WITH MILEAGE </p> </footer>
+ 
+ <!-- Your website content -->
+...
+
+<!-- Add this just before </body> -->
+<audio id="clickSound" preload="auto">
+  <source src="Sound/mixkit-camera-shutter-click-1133.wav" type="audio/mpeg">
+</audio>
+
+<script>
+function playClickSound() {
+  const sound = document.getElementById("clickSound");
+  sound.currentTime = 0;
+  sound.play().catch(() => {});
+}
+</script>
+
+</body>
+</html>
+ 
+                                                                                                                                                                                                            
 
 
   
