@@ -27,16 +27,212 @@
 
  ========================================= MOBILE ========================================= */ @media(max-width:550px){ .offer-bar{ height:48px; } .offer-badge{ height:48px; padding:0 11px; font-size:11px; } .offer-item{ font-size:13px; margin-right:45px; } .shop-header{ padding:40px 15px; } .shop-name{ font-size:34px; } .dialogue{ font-size:17px; } .products-section{ padding:50px 15px; } .products-title{ font-size:28px; } .product-grid{ grid-template-columns:1fr; } .reviews-section{ padding:50px 15px; } .reviews-heading h2{ font-size:28px; } .review-grid{ grid-template-columns:1fr; } .contact-section{ padding:50px 15px; } .contact-title{ font-size:28px; } } </style> </head> <body> <!--
 
- ========================================= OFFER BAR ========================================= --> <div class="offer-bar">
+ /* =========================================
+   PREMIUM OFFER BAR
+========================================= */
 
-  <div class="offer-badge">
-    🔥 LIMITED OFFER
-</div>
+.offer-bar{
+    width:100%;
+    height:54px;
+    background:#0B1F33;
+    color:#FFFFFF;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    position:relative;
+    border-bottom:1px solid #C9A227;
+}
 
-<div class="offer-track">
+/* GOLD BADGE */
 
-    <div class="offer-item">
-    <h2> 🎉 RAKSHABANDAN SPECIAL ₹1000 OFF ON  🛵 </h2>
+.offer-badge{
+    height:100%;
+    min-width:145px;
+    padding:0 18px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#C9A227;
+    color:#0B1F33;
+
+    font-size:12px;
+    font-weight:900;
+    letter-spacing:1px;
+
+    position:relative;
+    z-index:10;
+
+    box-shadow:8px 0 20px rgba(0,0,0,.22);
+}
+
+/* SMALL GOLD EDGE */
+
+.offer-badge:after{
+    content:"";
+    position:absolute;
+    right:-12px;
+    top:0;
+
+    border-top:27px solid transparent;
+    border-bottom:27px solid transparent;
+    border-left:12px solid #C9A227;
+}
+
+/* MOVING AREA */
+
+.offer-track{
+    display:flex;
+    width:max-content;
+    align-items:center;
+
+    animation:offerMove 22s linear infinite;
+
+    padding-left:40px;
+}
+
+/* EACH OFFER */
+
+.offer-item{
+    display:flex;
+    align-items:center;
+    gap:13px;
+
+    white-space:nowrap;
+
+    margin-right:80px;
+
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:.3px;
+}
+
+/* DISCOUNT */
+
+.offer-price{
+    display:inline-flex;
+    align-items:center;
+
+    background:#FFFFFF;
+    color:#0B1F33;
+
+    padding:6px 13px;
+
+    border-radius:6px;
+
+    font-size:14px;
+    font-weight:900;
+
+    box-shadow:0 0 14px rgba(201,162,39,.25);
+}
+
+/* TEXT */
+
+.offer-text{
+    color:#E5DCC5;
+}
+
+/* SEPARATOR */
+
+.offer-separator{
+    color:#C9A227;
+    font-size:9px;
+    margin-left:10px;
+}
+
+/* ANIMATION */
+
+@keyframes offerMove{
+
+    0%{
+        transform:translateX(0);
+    }
+
+    100%{
+        transform:translateX(-50%);
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media(max-width:550px){
+
+    .offer-bar{
+        height:48px;
+    }
+
+    .offer-badge{
+        min-width:112px;
+        padding:0 10px;
+        font-size:9px;
+        letter-spacing:.5px;
+    }
+
+    .offer-badge:after{
+        right:-9px;
+
+        border-top-width:24px;
+        border-bottom-width:24px;
+        border-left-width:9px;
+    }
+
+    .offer-track{
+        padding-left:30px;
+    }
+
+    .offer-item{
+        gap:8px;
+        margin-right:55px;
+        font-size:11px;
+    }
+
+    .offer-price{
+        padding:5px 9px;
+        font-size:11px;
+    }
+
+    .offer-text{
+        font-size:11px;
+    }
+
+}
+  <div class="offer-bar">
+
+    <div class="offer-badge">
+        ✦ SPECIAL OFFER
+    </div>
+
+    <div class="offer-track">
+
+        <div class="offer-item">
+            🎁 RAKSHABANDAN SPECIAL
+            <span class="offer-price">₹1000 OFF</span>
+            <span class="offer-text">ON SELECTED SCOOTERS</span>
+            <span class="offer-separator">◆</span>
+        </div>
+
+        <div class="offer-item">
+            🎁 RAKSHABANDAN SPECIAL
+            <span class="offer-price">₹1000 OFF</span>
+            <span class="offer-text">ON SELECTED SCOOTERS</span>
+            <span class="offer-separator">◆</span>
+        </div>
+
+        <div class="offer-item">
+            🎁 RAKSHABANDAN SPECIAL
+            <span class="offer-price">₹1000 OFF</span>
+            <span class="offer-text">ON SELECTED SCOOTERS</span>
+            <span class="offer-separator">◆</span>
+        </div>
+
+    </div>
+
+ </div>
          
 
 
@@ -44,8 +240,7 @@
 
  
 
-    </div>
-</div>
+    
 </div> <!-- ========================================= SHOP HEADER ========================================= --> <header class="shop-header">
  <div class="shop-name">
     I.S ENTERPRISES
