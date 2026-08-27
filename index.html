@@ -3,120 +3,534 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>I.S. Enterprises | EV Scooty Showroom</title>
-<meta name="description" content="I.S. Enterprises EV Scooty Showroom - View available electric scooter stock, prices and contact details.">
+
+<title>I.S ENTERPRISES</title>
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,Helvetica,sans-serif;background:#f5f7fa;color:#17202a}
-header{background:linear-gradient(135deg,#0b6b3a,#16a085);color:#fff;padding:28px 16px;text-align:center}
-header h1{font-size:32px;letter-spacing:1px}
-header p{margin-top:8px;font-size:16px}
-nav{background:#fff;padding:12px;text-align:center;position:sticky;top:0;z-index:5;box-shadow:0 2px 8px #0001}
-nav a{color:#0b6b3a;text-decoration:none;font-weight:bold;margin:0 12px}
-.hero{padding:28px 16px;text-align:center}
-.hero h2{font-size:28px;margin-bottom:8px}
-.hero p{color:#566573}
-.search{max-width:650px;margin:18px auto}
-.search input{width:100%;padding:14px;border:1px solid #ccd1d1;border-radius:10px;font-size:16px}
-.container{max-width:1150px;margin:auto;padding:0 16px 40px}
-.stock-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.card{background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 4px 15px #00000012;border:1px solid #e5e7e9}
-.photo{height:155px;background:linear-gradient(135deg,#d5f5e3,#eafaf1);display:flex;align-items:center;justify-content:center;font-size:52px}
-.card-body{padding:16px}
-.card h3{font-size:20px;margin-bottom:9px}
-.badge{display:inline-block;background:#d5f5e3;color:#117a65;padding:5px 9px;border-radius:20px;font-size:12px;font-weight:bold;margin-bottom:10px}
-.price{font-size:21px;font-weight:bold;color:#0b6b3a;margin:8px 0}
-.details{color:#566573;font-size:14px;line-height:1.7}
-.btn{display:block;text-align:center;text-decoration:none;padding:11px;margin-top:12px;border-radius:9px;background:#16a085;color:white;font-weight:bold}
-.contact{background:#17202a;color:white;text-align:center;padding:32px 16px;margin-top:25px}
-.contact h2{margin-bottom:10px}
-.contact a{color:#fff;text-decoration:none;font-weight:bold}
-footer{text-align:center;padding:16px;color:#7b7d7d;font-size:13px;background:#fff}
-@media(max-width:500px){header h1{font-size:26px}.hero h2{font-size:24px}nav a{margin:0 6px;font-size:14px}}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f6f9ff;
+    color: #172033;
+}
+
+/* OFFER BAR */
+.offer {
+    height: 42px;
+    background: #f97316;
+    color: white;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+.offer span {
+    white-space: nowrap;
+    padding-left: 100%;
+    animation: slide 12s linear infinite;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* HEADER */
+header {
+    background: white;
+    padding: 16px 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.nav {
+    max-width: 1150px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 900;
+    color: #123b73;
+}
+
+nav a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: #123b73;
+    font-weight: bold;
+}
+
+/* HERO */
+.hero {
+    padding: 70px 20px;
+    background: linear-gradient(135deg, #eaf3ff, #ffffff);
+}
+
+.hero-inner {
+    max-width: 1150px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+h1 {
+    font-size: clamp(40px, 7vw, 70px);
+    color: #123b73;
+}
+
+.tagline {
+    margin-top: 10px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #155eef;
+}
+
+.hero-icon {
+    font-size: 110px;
+    background: white;
+    padding: 35px 50px;
+    border-radius: 30px;
+    box-shadow: 0 15px 40px rgba(18,59,115,0.10);
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-block;
+    padding: 13px 19px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 22px;
+    margin-right: 8px;
+}
+
+.blue {
+    background: #155eef;
+    color: white;
+}
+
+.orange {
+    background: #f97316;
+    color: white;
+}
+
+/* SECTIONS */
+section {
+    max-width: 1150px;
+    margin: auto;
+    padding: 55px 20px;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.title h2 {
+    font-size: 34px;
+    color: #123b73;
+}
+
+/* SCOOTER GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border: 1px solid #e4eaf2;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(18,59,115,0.08);
+}
+
+.pic {
+    height: 190px;
+    background: #eef4fb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 75px;
+}
+
+.info {
+    padding: 18px;
+}
+
+.info h3 {
+    color: #123b73;
+    margin-bottom: 10px;
+}
+
+.info p {
+    color: #667085;
+    font-size: 14px;
+    margin: 7px 0;
+}
+
+.enquiry {
+    display: block;
+    text-align: center;
+    background: #f97316;
+    color: white;
+    text-decoration: none;
+    padding: 11px;
+    border-radius: 9px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* CONTACT */
+.contact {
+    max-width: none;
+    background: white;
+}
+
+.contact-inner {
+    max-width: 1150px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.boxes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.box {
+    background: #f7f9fc;
+    padding: 25px;
+    border-radius: 18px;
+}
+
+.box h3 {
+    color: #123b73;
+    margin-bottom: 15px;
+}
+
+.box p {
+    margin: 10px 0;
+}
+
+.box a:not(.btn) {
+    color: #155eef;
+}
+
+/* FOOTER */
+footer {
+    background: #123b73;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+footer p {
+    margin-top: 8px;
+}
+
+/* MOBILE */
+@media (max-width: 800px) {
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-icon {
+        font-size: 80px;
+    }
+
+    nav a {
+        display: none;
+    }
+
+    .boxes {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .hero {
+        padding: 50px 15px;
+    }
+
+    section {
+        padding: 45px 15px;
+    }
+}
 </style>
 </head>
+
 <body>
 
+<!-- OFFER -->
+<div class="offer">
+    <span>₹1000 OFFER DUE TO RAKSHABANDAN</span>
+</div>
+
+<!-- HEADER -->
 <header>
-  <h1>I.S. ENTERPRISES</h1>
-  <p>EV SCOOTY SHOWROOM • BARAMASIA MORE, BIRNI</p>
-  <p><strong>BEST MILEAGE • BEST PRICE</strong></p>
+    <div class="nav">
+
+        <div class="logo">
+            I.S ENTERPRISES
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#scooters">Scooters</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </div>
 </header>
 
-<nav>
-  <a href="#stock">Available Stock</a>
-  <a href="tel:6200933163">Contact</a>
-</nav>
 
-<section class="hero">
-  <h2>🛵 Available EV Scooty Stock</h2>
-  <p>Check our current models and contact us for booking.</p>
-  <div class="search">
-    <input id="search" type="text" placeholder="Search scooter model..." onkeyup="filterStock()">
-  </div>
+<!-- HERO -->
+<section class="hero" id="home">
+
+    <div class="hero-inner">
+
+        <div>
+
+            <h1>I.S ENTERPRISES</h1>
+
+            <div class="tagline">
+                BEST QUALITY WITH MILEAGE
+            </div>
+
+            <a class="btn blue" href="#scooters">
+                View Scooters
+            </a>
+
+            <a class="btn orange" href="tel:9162289982">
+                Call Now
+            </a>
+
+        </div>
+
+        <div class="hero-icon">
+            🛵
+        </div>
+
+    </div>
+
 </section>
 
-<main class="container" id="stock">
-  <div class="stock-grid" id="stockGrid"></div>
-</main>
 
+<!-- SCOOTERS -->
+<section id="scooters">
+
+    <div class="title">
+        <h2>Scooters</h2>
+    </div>
+
+    <div class="grid" id="products"></div>
+
+</section>
+
+
+<!-- CONTACT -->
 <section class="contact" id="contact">
-  <h2>Contact I.S. Enterprises</h2>
-  <p>📍 Baramasia More, Birni</p>
-  <p style="margin-top:10px;">📞 <a href="tel:6200933163">6200933163</a> &nbsp; | &nbsp; <a href="tel:9162289982">9162289982</a></p>
-  <p style="margin-top:10px;">
-    💬 <a href="https://wa.me/9162289982" target="_blank">WhatsApp Us</a>
-  </p>
+
+    <div class="contact-inner">
+
+        <div class="title">
+            <h2>Contact</h2>
+        </div>
+
+        <div class="boxes">
+
+            <div class="box">
+
+                <h3>I.S ENTERPRISES</h3>
+
+                <p>
+                    📍 BARMASIYA MORE NEAR BOI BANK
+                </p>
+
+                <p>
+                    📞
+                    <a href="tel:9162289982">
+                        9162289982
+                    </a>
+                </p>
+
+                <p>
+                    📞
+                    <a href="tel:6200933163">
+                        6200933163
+                    </a>
+                </p>
+
+                <a
+                    class="btn blue"
+                    href="tel:9162289982">
+                    Call
+                </a>
+
+                <a
+                    class="btn orange"
+                    href="https://wa.me/916200933163?text=Hello%20I%20am%20interested%20in%20a%20scooter."
+                    target="_blank"
+                    rel="noopener">
+                    WhatsApp
+                </a>
+
+            </div>
+
+
+            <div class="box">
+
+                <h3>Location</h3>
+
+                <p>
+                    BARMASIYA MORE NEAR BOI BANK
+                </p>
+
+                <!-- YOUR EXACT GOOGLE MAPS LINK -->
+                <a
+                    class="btn blue"
+                    href="https://maps.app.goo.gl/FgWgHH7VaNQP3yki9"
+                    target="_blank"
+                    rel="noopener">
+                    Get Directions
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
-<footer>© 2026 I.S. Enterprises • EV Scooty Showroom</footer>
 
+<!-- FOOTER -->
+<footer>
+
+    <strong>
+        I.S ENTERPRISES
+    </strong>
+
+    <p>
+        BEST QUALITY WITH MILEAGE
+    </p>
+
+</footer>
+
+
+<!-- SCOOTER JAVASCRIPT -->
 <script>
+
 const scooters = [
-  {name:"IS-EV City 1",price:"₹69,999",battery:"Lead Acid",range:"80 km",stock:3},
-  {name:"IS-EV City 2",price:"₹74,999",battery:"Lead Acid",range:"90 km",stock:2},
-  {name:"IS-EV Plus",price:"₹79,999",battery:"Lithium",range:"100 km",stock:4},
-  {name:"IS-EV Rider",price:"₹84,999",battery:"Lithium",range:"110 km",stock:2},
-  {name:"IS-EV Rider Pro",price:"₹89,999",battery:"Lithium",range:"120 km",stock:1},
-  {name:"IS-EV Smart",price:"₹72,999",battery:"Lead Acid",range:"85 km",stock:5},
-  {name:"IS-EV Smart Plus",price:"₹78,999",battery:"Lithium",range:"100 km",stock:2},
-  {name:"IS-EV Family",price:"₹81,999",battery:"Lithium",range:"105 km",stock:3},
-  {name:"IS-EV Family Pro",price:"₹91,999",battery:"Lithium",range:"125 km",stock:1},
-  {name:"IS-EV Sport",price:"₹86,999",battery:"Lithium",range:"115 km",stock:2},
-  {name:"IS-EV Sport Pro",price:"₹94,999",battery:"Lithium",range:"130 km",stock:1},
-  {name:"IS-EV Eco",price:"₹67,999",battery:"Lead Acid",range:"75 km",stock:4},
-  {name:"IS-EV Eco Plus",price:"₹73,999",battery:"Lead Acid",range:"90 km",stock:2},
-  {name:"IS-EV Max",price:"₹99,999",battery:"Lithium",range:"140 km",stock:1},
-  {name:"IS-EV Max Pro",price:"₹1,09,999",battery:"Lithium",range:"150 km",stock:2}
+
+    "Scooter 1",
+    "Scooter 2",
+    "Scooter 3",
+    "Scooter 4",
+    "Scooter 5",
+    "Scooter 6",
+    "Scooter 7",
+    "Scooter 8",
+    "Scooter 9",
+    "Scooter 10",
+    "Scooter 11",
+    "Scooter 12",
+    "Scooter 13",
+    "Scooter 14",
+    "Scooter 15"
+
 ];
 
-function renderStock(list=scooters){
-  const grid=document.getElementById("stockGrid");
-  grid.innerHTML="";
-  list.forEach((s,i)=>{
-    const available=s.stock>0;
-    grid.innerHTML += `
-      <article class="card">
-        <div class="photo">🛵</div>
-        <div class="card-body">
-          <span class="badge">${available ? "✓ IN STOCK" : "SOLD OUT"}</span>
-          <h3>${s.name}</h3>
-          <div class="price">${s.price}</div>
-          <div class="details">
-            🔋 Battery: ${s.battery}<br>
-            🛣️ Range: ${s.range}<br>
-            📦 Quantity: ${s.stock}
-          </div>
-          <a class="btn" href="https://wa.me/9162289982?text=Hello%20I%20want%20details%20about%20${encodeURIComponent(s.name)}" target="_blank">WhatsApp Enquiry</a>
+const whatsappNumber = "916200933163";
+
+const productContainer =
+    document.getElementById("products");
+
+
+scooters.forEach(function(name) {
+
+    const card = document.createElement("article");
+
+    card.className = "card";
+
+    const message =
+        "Hello, I am interested in " +
+        name +
+        ". Please provide details.";
+
+    card.innerHTML = `
+
+        <div class="pic">
+            🛵
         </div>
-      </article>`;
-  });
-}
-function filterStock(){
-  const q=document.getElementById("search").value.toLowerCase();
-  renderStock(scooters.filter(s=>s.name.toLowerCase().includes(q)));
-}
-renderStock();
+
+        <div class="info">
+
+            <h3>${name}</h3>
+
+            <p>
+                Mileage: Add exact mileage
+            </p>
+
+            <p>
+                Price & model details available on enquiry
+            </p>
+
+            <a
+                class="enquiry"
+                href="https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}"
+                target="_blank"
+                rel="noopener">
+
+                Enquiry on WhatsApp
+
+            </a>
+
+        </div>
+
+    `;
+
+    productContainer.appendChild(card);
+
+});
+
 </script>
+
 </body>
 </html>
