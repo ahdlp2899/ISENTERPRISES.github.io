@@ -1,26 +1,34 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>🌟WELCOME BACK TO OUR EV SCOOTER SHOP🌟</title>
+<title>I.S ENTERPRISES</title>
 
 <style>
+
+/* =========================
+   BASIC SETTINGS
+========================= */
+
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 body {
+    margin: 0;
     font-family: Arial, sans-serif;
-    background: #f6f9ff;
+    background: #f5f8fc;
     color: #172033;
 }
 
-/* OFFER BAR */
-.offer {
+
+/* =========================
+   OFFER SLIDER
+========================= */
+
+.offer-bar {
     height: 42px;
     background: #f97316;
     color: white;
@@ -30,214 +38,225 @@ body {
     font-weight: bold;
 }
 
-.offer span {
+.offer-text {
     white-space: nowrap;
     padding-left: 100%;
-    animation: slide 12s linear infinite;
+    animation: offerSlide 13s linear infinite;
 }
 
-@keyframes slide {
-    from {
+@keyframes offerSlide {
+    0% {
         transform: translateX(0);
     }
-    to {
+
+    100% {
         transform: translateX(-100%);
     }
 }
 
-/* HEADER */
-header {
-    background: white;
-    padding: 16px 20px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    position: sticky;
-    top: 0;
-    z-index: 10;
-}
 
-.nav {
-    max-width: 1150px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+/* =========================
+   SHOP NAME + DIALOGUE
+========================= */
 
-.logo {
-    font-size: 25px;
-    font-weight: 900;
-    color: #123b73;
-}
-
-nav a {
-    margin-left: 15px;
-    text-decoration: none;
-    color: #123b73;
-    font-weight: bold;
-}
-
-/* HERO */
-.hero {
-    padding: 70px 20px;
-    background: linear-gradient(135deg, #eaf3ff, #ffffff);
-}
-
-.hero-inner {
-    max-width: 1150px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 30px;
-}
-
-h1 {
-    font-size: clamp(40px, 7vw, 70px);
-    color: #123b73;
-}
-
-.tagline {
-    margin-top: 10px;
-    font-size: 22px;
-    font-weight: bold;
-    color: #155eef;
-}
-
-.hero-icon {
-    font-size: 110px;
-    background: white;
-    padding: 35px 50px;
-    border-radius: 30px;
-    box-shadow: 0 15px 40px rgba(18,59,115,0.10);
-}
-
-/* BUTTONS */
-.btn {
-    display: inline-block;
-    padding: 13px 19px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 22px;
-    margin-right: 8px;
-}
-
-.blue {
-    background: #155eef;
-    color: white;
-}
-
-.orange {
-    background: #f97316;
-    color: white;
-}
-
-/* SECTIONS */
-section {
-    max-width: 1150px;
-    margin: auto;
-    padding: 55px 20px;
-}
-
-.title {
+.shop-header {
     text-align: center;
-    margin-bottom: 30px;
-}
-
-.title h2 {
-    font-size: 34px;
-    color: #123b73;
-}
-
-/* SCOOTER GRID */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.card {
     background: white;
-    border: 1px solid #e4eaf2;
-    border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 8px 24px rgba(18,59,115,0.08);
+    padding: 45px 20px;
 }
 
-.pic {
-    height: 190px;
-    background: #eef4fb;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 75px;
-}
-
-.info {
-    padding: 18px;
-}
-
-.info h3 {
+.shop-name {
+    font-size: 45px;
+    font-weight: 900;
     color: #123b73;
     margin-bottom: 10px;
 }
 
-.info p {
-    color: #667085;
-    font-size: 14px;
-    margin: 7px 0;
+.dialogue {
+    font-size: 21px;
+    font-weight: bold;
+    color: #155eef;
 }
 
-.enquiry {
+
+/* =========================
+   PRODUCT SECTION
+========================= */
+
+.products-section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+.products-title {
+    text-align: center;
+    font-size: 32px;
+    color: #123b73;
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   PRODUCT GRID
+========================= */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+
+/* =========================
+   PRODUCT CARD
+========================= */
+
+.product-card {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid #e1e7ef;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+
+/* PRODUCT IMAGE */
+
+.product-image {
+    width: 100%;
+    height: 230px;
+    background: #edf3fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* PRODUCT INFORMATION */
+
+.product-info {
+    padding: 20px;
+}
+
+.product-name {
+    font-size: 22px;
+    color: #123b73;
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.product-detail {
+    font-size: 15px;
+    color: #596579;
+    margin: 9px 0;
+}
+
+
+/* ENQUIRY BUTTON */
+
+.enquiry-button {
     display: block;
     text-align: center;
     background: #f97316;
     color: white;
     text-decoration: none;
-    padding: 11px;
-    border-radius: 9px;
+    padding: 13px;
+    border-radius: 10px;
     font-weight: bold;
-    margin-top: 15px;
+    margin-top: 18px;
 }
 
-/* CONTACT */
-.contact {
-    max-width: none;
+
+/* =========================
+   CONTACT / LOCATION
+========================= */
+
+.contact-section {
     background: white;
+    padding: 55px 20px;
 }
 
-.contact-inner {
-    max-width: 1150px;
+.contact-container {
+    max-width: 1200px;
     margin: auto;
-    padding: 0 20px;
 }
 
-.boxes {
+.contact-title {
+    text-align: center;
+    font-size: 32px;
+    color: #123b73;
+    margin-bottom: 30px;
+}
+
+.contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 25px;
 }
 
-.box {
-    background: #f7f9fc;
-    padding: 25px;
+.contact-box {
+    background: #f6f9fd;
+    padding: 28px;
     border-radius: 18px;
 }
 
-.box h3 {
+.contact-box h3 {
     color: #123b73;
-    margin-bottom: 15px;
+    margin-top: 0;
+    font-size: 23px;
 }
 
-.box p {
-    margin: 10px 0;
+.contact-box p {
+    color: #596579;
+    line-height: 1.6;
 }
 
-.box a:not(.btn) {
+.contact-box a {
     color: #155eef;
 }
 
-/* FOOTER */
+
+/* BUTTONS */
+
+.call-button,
+.whatsapp-button,
+.map-button {
+    display: inline-block;
+    padding: 13px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.call-button {
+    background: #155eef;
+    color: white !important;
+}
+
+.whatsapp-button {
+    background: #f97316;
+    color: white !important;
+}
+
+.map-button {
+    background: #155eef;
+    color: white !important;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
 footer {
     background: #123b73;
     color: white;
@@ -249,299 +268,713 @@ footer p {
     margin-top: 8px;
 }
 
-/* MOBILE */
-@media (max-width: 800px) {
 
-    .grid {
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 850px) {
+
+    .product-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .hero-inner {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .hero-icon {
-        font-size: 80px;
-    }
-
-    nav a {
-        display: none;
-    }
-
-    .boxes {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 520px) {
-
-    .grid {
+    .contact-grid {
         grid-template-columns: 1fr;
     }
 
-    .logo {
-        font-size: 20px;
-    }
-
-    .hero {
-        padding: 50px 15px;
-    }
-
-    section {
-        padding: 45px 15px;
-    }
 }
+
+
+@media (max-width: 550px) {
+
+    .shop-name {
+        font-size: 34px;
+    }
+
+    .dialogue {
+        font-size: 18px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .products-section {
+        padding: 40px 15px;
+    }
+
+}
+
 </style>
 </head>
 
+
 <body>
 
-<!-- OFFER -->
-<div class="offer">
-    <span>₹1000 OFFER DUE TO RAKSHABANDAN</span>
+
+<!-- ==================================================
+     OFFER SLIDER
+     CHANGE OFFER TEXT HERE
+================================================== -->
+
+<div class="offer-bar">
+
+    <div class="offer-text">
+        ₹1000 OFFER DUE TO RAKSHABANDAN
+    </div>
+
 </div>
 
-<!-- HEADER -->
-<header>
-    <div class="nav">
 
-        <div class="logo">
-            I.S ENTERPRISES
-        </div>
 
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#scooters">Scooters</a>
-            <a href="#contact">Contact</a>
-        </nav>
+<!-- ==================================================
+     SHOP NAME + DIALOGUE
+================================================== -->
 
+<header class="shop-header">
+
+    <!-- CHANGE SHOP NAME HERE -->
+
+    <div class="shop-name">
+        I.S ENTERPRISES
     </div>
+
+
+    <!-- CHANGE DIALOGUE HERE -->
+
+    <div class="dialogue">
+        BEST QUALITY WITH MILEAGE
+    </div>
+
 </header>
 
 
-<!-- HERO -->
-<section class="hero" id="home">
 
-    <div class="hero-inner">
+<!-- ==================================================
+     PRODUCTS
+================================================== -->
 
-        <div>
+<section class="products-section">
 
-            <h1>I.S ENTERPRISES</h1>
-
-            <div class="tagline">
-                BEST QUALITY WITH MILEAGE
-            </div>
-
-            <a class="btn blue" href="#scooters">
-                View Scooters
-            </a>
-
-            <a class="btn orange" href="tel:9162289982">
-                Call Now
-            </a>
-
-        </div>
-
-        <div class="hero-icon">
-            🛵
-        </div>
-
-    </div>
-
-</section>
+    <h2 class="products-title">
+        Our Scooters
+    </h2>
 
 
-<!-- SCOOTERS -->
-<section id="scooters">
-
-    <div class="title">
-        <h2>Scooters</h2>
-    </div>
-
-    <div class="grid" id="products"></div>
-
-</section>
+    <div class="product-grid">
 
 
-<!-- CONTACT -->
-<section class="contact" id="contact">
 
-    <div class="contact-inner">
+        <!-- ==================================================
+             PRODUCT 01
+             CHANGE ONLY THIS SECTION
+        ================================================== -->
 
-        <div class="title">
-            <h2>Contact</h2>
-        </div>
+        <div class="product-card">
 
-        <div class="boxes">
+            <div class="product-image">
 
-            <div class="box">
+                <!-- PUT YOUR IMAGE LINK HERE -->
 
-                <h3>I.S ENTERPRISES</h3>
-
-                <p>
-                    📍 BARMASIYA MORE NEAR BOI BANK
-                </p>
-
-                <p>
-                    📞
-                    <a href="tel:9162289982">
-                        9162289982
-                    </a>
-                </p>
-
-                <p>
-                    📞
-                    <a href="tel:6200933163">
-                        6200933163
-                    </a>
-                </p>
-
-                <a
-                    class="btn blue"
-                    href="tel:9162289982">
-                    Call
-                </a>
-
-                <a
-                    class="btn orange"
-                    href="https://wa.me/916200933163?text=Hello%20I%20am%20interested%20in%20a%20scooter."
-                    target="_blank"
-                    rel="noopener">
-                    WhatsApp
-                </a>
+                <img
+                    src="https://via.placeholder.com/600x400?text=Scooter+1"
+                    alt="Scooter 1">
 
             </div>
 
 
-            <div class="box">
+            <div class="product-info">
 
-                <h3>Location</h3>
+                <!-- PRODUCT NAME -->
 
-                <p>
-                    BARMASIYA MORE NEAR BOI BANK
-                </p>
+                <div class="product-name">
+                    Scooter 1
+                </div>
 
-                <!-- YOUR EXACT GOOGLE MAPS LINK -->
+
+                <!-- MILEAGE -->
+
+                <div class="product-detail">
+                    🛵 Mileage: 00 km/l
+                </div>
+
+
+                <!-- BATTERY -->
+
+                <div class="product-detail">
+                    🔋 Battery: 00 Ah
+                </div>
+
+
+                <!-- ENQUIRY -->
+
                 <a
-                    class="btn blue"
-                    href="https://maps.app.goo.gl/FgWgHH7VaNQP3yki9"
-                    target="_blank"
-                    rel="noopener">
-                    Get Directions
+                    class="enquiry-button"
+                    href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%201"
+                    target="_blank">
+
+                    Enquiry
+
                 </a>
 
             </div>
 
         </div>
 
-    </div>
-
-</section>
 
 
-<!-- FOOTER -->
-<footer>
+        <!-- ==================================================
+             PRODUCT 02
+        ================================================== -->
 
-    <strong>
-        I.S ENTERPRISES
-    </strong>
+        <div class="product-card">
 
-    <p>
-        BEST QUALITY WITH MILEAGE
-    </p>
+            <div class="product-image">
 
-</footer>
+                <img
+                    src="https://via.placeholder.com/600x400?text=Scooter+2"
+                    alt="Scooter 2">
 
+            </div>
 
-<!-- SCOOTER JAVASCRIPT -->
-<script>
+            <div class="product-info">
 
-const scooters = [
+                <div class="product-name">
+                    Scooter 2
+                </div>
 
-    "Scooter 1",MILEAGE 100 KM
-    "Scooter 2",
-    "Scooter 3",
-    "Scooter 4",
-    "Scooter 5",
-    "Scooter 6",
-    "Scooter 7",
-    "Scooter 8",
-    "Scooter 9",
-    "Scooter 10",
-    "Scooter 11",
-    "Scooter 12",
-    "Scooter 13",
-    "Scooter 14",
-    "Scooter 15"
+                <div class="product-detail">
+                    🛵 Mileage: 00 km/l
+                </div>
 
-];
+                <div class="product-detail">
+                    🔋 Battery: 00 Ah
+                </div>
 
-const whatsappNumber = "916200933163";
+                <a
+                    class="enquiry-button"
+                    href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%202"
+                    target="_blank">
 
-const productContainer =
-    document.getElementById("products");
+                    Enquiry
 
+                </a>
 
-scooters.forEach(function(name) {
-
-    const card = document.createElement("article");
-
-    card.className = "card";
-
-    const message =
-        "Hello, I am interested in " +
-        name +
-        ". Please provide details.";
-
-    card.innerHTML = `
-
-        <div class="pic">
-            🛵
-        </div>
-
-        <div class="info">
-
-            <h3>${name}</h3>
-
-            <p>
-                Mileage: Add exact mileage
-            </p>
-
-            <p>
-                Price & model details available on enquiry
-            </p>
-            
-            <h3>${Scooter 1}</h3>
-
-            <p>
-                Mileage: 70 KM
-            </p>
-
-            <p>
-                LITHIUM BATTERY 
-            </p>
-            
-
-            <a
-                class="enquiry"
-                href="https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}"
-                target="_blank"
-                rel="noopener">
-
-                Enquiry on WhatsApp
-
-            </a>
+            </div>
 
         </div>
 
-    `;
 
-    productContainer.appendChild(card);
 
-});
+        <!-- ==================================================
+             PRODUCT 03
+        ================================================== -->
 
-</script>
+        <div class="product-card">
 
-</body>
-</html>
+            <div class="product-image">
+
+                <img
+                    src="https://via.placeholder.com/600x400?text=Scooter+3"
+                    alt="Scooter 3">
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    Scooter 3
+                </div>
+
+                <div class="product-detail">
+                    🛵 Mileage: 00 km/l
+                </div>
+
+                <div class="product-detail">
+                    🔋 Battery: 00 Ah
+                </div>
+
+                <a
+                    class="enquiry-button"
+                    href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%203"
+                    target="_blank">
+
+                    Enquiry
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ==================================================
+             PRODUCT 04
+        ================================================== -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="https://via.placeholder.com/600x400?text=Scooter+4"
+                    alt="Scooter 4">
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    Scooter 4
+                </div>
+
+                <div class="product-detail">
+                    🛵 Mileage: 00 km/l
+                </div>
+
+                <div class="product-detail">
+                    🔋 Battery: 00 Ah
+                </div>
+
+                <a
+                    class="enquiry-button"
+                    href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%204"
+                    target="_blank">
+
+                    Enquiry
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ==================================================
+             PRODUCT 05
+        ================================================== -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="https://via.placeholder.com/600x400?text=Scooter+5"
+                    alt="Scooter 5">
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    Scooter 5
+                </div>
+
+                <div class="product-detail">
+                    🛵 Mileage: 00 km/l
+                </div>
+
+                <div class="product-detail">
+                    🔋 Battery: 00 Ah
+                </div>
+
+                <a
+                    class="enquiry-button"
+                    href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%205"
+                    target="_blank">
+
+                    Enquiry
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ==================================================
+             PRODUCT 06
+        ================================================== -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="https://via.placeholder.com/600x400?text=Scooter+6"
+                    alt="Scooter 6">
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    Scooter 6
+                </div>
+
+                <div class="product-detail">
+                    🛵 Mileage: 00 km/l
+                </div>
+
+                <div class="product-detail">
+                    🔋 Battery: 00 Ah
+                </div>
+
+                <a
+                    class="enquiry-button"
+                    href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%206"
+                    target="_blank">
+
+                    Enquiry
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRODUCT 07 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+                <img
+                    src="https://via.placeholder.com/600x400?text=Scooter+7"
+                    alt="Scooter 7">
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    Scooter 7
+                </div>
+
+                <div class="product-detail">
+                    🛵 Mileage: 00 km/l
+                </div>
+
+                <div class="product-detail">
+                    🔋 Battery: 00 Ah
+                </div>
+
+                <a
+                    class="enquiry-button"
+                    href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%207"
+                    target="_blank">
+
+                    Enquiry
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRODUCT 08 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+                <img
+                    src="https://via.placeholder.com/600x400?text=Scooter+8"
+                    alt="Scooter 8">
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    Scooter 8
+                </div>
+
+                <div class="product-detail">
+                    🛵 Mileage: 00 km/l
+                </div>
+
+                <div class="product-detail">
+                    🔋 Battery: 00 Ah
+                </div>
+
+                <a
+                    class="enquiry-button"
+                    href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%208"
+                    target="_blank">
+
+                    Enquiry
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRODUCT 09 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+                <img
+                    src="https://via.placeholder.com/600x400?text=Scooter+9"
+                    alt="Scooter 9">
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    Scooter 9
+                </div>
+
+                <div class="product-detail">
+                    🛵 Mileage: 00 km/l
+                </div>
+
+                <div class="product-detail">
+                    🔋 Battery: 00 Ah
+                </div>
+
+                <a
+                    class="enquiry-button"
+                    href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%209"
+                    target="_blank">
+
+                    Enquiry
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRODUCT 10 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+                <img
+                    src="https://via.placeholder.com/600x400?text=Scooter+10"
+                    alt="Scooter 10">
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    Scooter 10
+                </div>
+
+                <div class="product-detail">
+                    🛵 Mileage: 00 km/l
+                </div>
+
+                <div class="product-detail">
+                    🔋 Battery: 00 Ah
+                </div>
+
+                <a
+                    class="enquiry-button"
+                    href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%2010"
+                    target="_blank">
+
+                    Enquiry
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRODUCT 11 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+                <img
+                    src="https://via.placeholder.com/600x400?text=Scooter+11"
+                    alt="Scooter 11">
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    Scooter 11
+                </div>
+
+                <div class="product-detail">
+                    🛵 Mileage: 00 km/l
+                </div>
+
+                <div class="product-detail">
+                    🔋 Battery: 00 Ah
+                </div>
+
+                <a
+                    class="enquiry-button"
+                    href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%2011"
+                    target="_blank">
+
+                    Enquiry
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRODUCT 12 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+                <img
+                    src="https://via.placeholder.com/600x400?text=Scooter+12"
+                    alt="Scooter 12">
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    Scooter 12
+                </div>
+
+                <div class="product-detail">
+                    🛵 Mileage: 00 km/l
+                </div>
+
+                <div class="product-detail">
+                    🔋 Battery: 00 Ah
+                </div>
+
+                <a
+                    class="enquiry-button"
+                    href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%2012"
+                    target="_blank">
+
+                    Enquiry
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRODUCT 13 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+                <img
+                    src="https://via.placeholder.com/600x400?text=Scooter+13"
+                    alt="Scooter 13">
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    Scooter 13
+                </div>
+
+                <div class="product-detail">
+                    🛵 Mileage: 00 km/l
+                </div>
+
+                <div class="product-detail">
+                    🔋 Battery: 00 Ah
+                </div>
+
+                <a
+                    class="enquiry-button"
+                    href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%2013"
+                    target="_blank">
+
+                    Enquiry
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRODUCT 14 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+                <img
+                    src="https://via.placeholder.com/600x400?text=Scooter+14"
+                    alt="Scooter 14">
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    Scooter 14
+                </div>
+
+                <div class="product-detail">
+                    🛵 Mileage: 00 km/l
+                </div>
+
+                <div class="product-detail">
+                    🔋 Battery: 00 Ah
+                </div>
+
+                <a
+                    class="enquiry-button"
+                    href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20in%20Scooter%2014"
+                    target="_blank">
+
+                    Enquiry
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PRODUCT 15 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+                <img
+                    src="https://via.placeholder.com/600x400?text=Scooter+15"
+                    alt="Scooter 15">
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-name">
+                    Scooter 15
+                </div>
+
+                <div class="product-detail">
+                    🛵 Mileage: 00 km/l
+                </div>
+
+                <div class="product-detail">
+                    🔋 Battery: 00 Ah
+                </div>
+
+                <a
+                    class="enquiry-button"
+                    href="https://wa.me/916200933163?text=Hello%2C%20I%20am%20interested%20
